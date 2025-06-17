@@ -25,7 +25,7 @@
 
 
   <title>Tackling Dimensional Collapse toward Comprehensive Universal Domain Adaptation</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/probability.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,13 +43,17 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
 
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">Tackling Dimensional Collapse toward Comprehensive Universal Domain Adaptation</h1>
@@ -142,15 +146,37 @@
 </section> -->
 <!-- End teaser video -->
 
+
+<!-- Youtube video -->
+<section class="section hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-half">
+          <!-- <h2 class="title is-3">Video</h2> -->
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bR6_Cq5t7xw?si=gRL4UHImpl6FWQpa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
 <!-- Paper abstract -->
 <section class="section hero is-small">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Universal Domain Adaptation (UniDA) addresses unsupervised domain adaptation where target classes may differ arbitrarily from source ones, except for a shared subset. An important approach, partial domain matching (PDM), aligns only shared classes but struggles in extreme cases where many source classes are absent in the target domain, underperforming the most naive baseline that trains on only source data. In this work, we identify that the failure of PDM for extreme UniDA stems from dimensional collapse (DC) in target representations. To address target DC, we propose to jointly leverage the alignment and uniformity techniques in modern self-supervised learning (SSL) on the unlabeled target data to preserve the intrinsic structure of the learned representations. Our experimental results confirm that SSL consistently advances PDM and delivers new state-of-the-art results across a broader benchmark of UniDA scenarios with different portions of shared classes, representing a crucial step toward truly comprehensive UniDA.
+            Universal Domain Adaptation (UniDA) addresses unsupervised domain adaptation where target classes may differ arbitrarily from source ones, except for a shared subset. A widely used approach, partial domain matching (PDM), aligns only shared classes but struggles in extreme cases where many source classes are absent in the target domain, underperforming the most naive baseline that trains on only source data. In this work, we identify that the failure of PDM for extreme UniDA stems from dimensional collapse (DC) in target representations. To address target DC, we propose to jointly leverage the alignment and uniformity techniques in self-supervised learning on the unlabeled target data to preserve the intrinsic structure of the learned representations. Our experimental results confirm that SSL consistently advances PDM and delivers new state-of-the-art results across a broader benchmark of UniDA scenarios with different portions of shared classes, representing a crucial step toward truly comprehensive UniDA. 
           </p>
         </div>
       </div>
@@ -159,15 +185,75 @@
 </section>
 <!-- End paper abstract -->
 
+<section class="section hero is-small">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Universal Domain Adaptation</h2>
+        
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <figure class="image">
+              <img src="static/images/unida.png" alt="Figure 1">
+            </figure>
+          </div>
+        </div>
+        <!-- Text with Bullet Points -->
+        <div class="content has-text-left">
+          <ul>
+            <li><b>Domain shift</b>: \( p_{s}(\mathbf{x}|y) \neq p_{t}(\mathbf{x}|y) \)</li>
+            <li><b>Category shift</b>: \( \mathcal{C}_{s} \neq \mathcal{C}_{t} \)</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- Motivation -->
 <section class="section hero is-small">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Motivation</h2>
+        
+        <!-- Two Figures Side by Side -->
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image is-4by3">
+              <img src="static/images/ratio.png" alt="Figure 1">
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3">
+              <img src="static/images/method_all_ratios.jpg" alt="Figure 2">
+            </figure>
+          </div>
+        </div>
+
+        <!-- Text with Bullet Points -->
+        <div class="content has-text-left">
+          <ul>
+            <li><b>Left</b>: Universal domain adaptation aims to address both domain shift and category shift under <i>arbitrary</i> label-set proportions. However, existing studies fail to cover the whole spectrum, particularly cases with a high proportion of source-private classes.</li>
+            <li><b>Right</b>: Surprisingly, existing methods that apply partial domain alignment perform worse than the simple baseline that trains only on source data.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End motivation -->
+
+<!-- Key findings -->
+<section class="section hero is-small">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Motivation</h2>
+        <h2 class="title is-3">Key Findings</h2>
         <div class="content has-text-justified">
           <p>
-             Universal Domain Adaptation (UniDA) addresses unsupervised domain adaptation where target classes may differ arbitrarily from source ones, except for a shared subset. An important approach, partial domain matching (PDM), aligns only shared classes but struggles in extreme cases where many source classes are absent in the target domain, underperforming the most naive baseline that trains on only source data. In this work, we identify that the failure of PDM for extreme UniDA stems from dimensional collapse (DC) in target representations. To address target DC, we propose to jointly leverage the alignment and uniformity techniques in modern self-supervised learning (SSL) on the unlabeled target data to preserve the intrinsic structure of the learned representations. Our experimental results confirm that SSL consistently advances PDM and delivers new state-of-the-art results across a broader benchmark of UniDA scenarios with different portions of shared classes, representing a crucial step toward truly comprehensive UniDA.
+             
             <!-- <img src="static/images/motivation.png" alt="Motivation" class="motivation-image"> -->
           </p>
         </div>
@@ -175,7 +261,9 @@
     </div>
   </div>
 </section>
-<!-- End motivation -->
+<!-- End key findings -->
+
+
 
 <!-- Image carousel -->
 <!-- <section class="hero is-small">
@@ -295,9 +383,16 @@
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
+    <div class="container is-max-widescreen content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+@inproceedings{dcunida_fang2025,
+  title={Tackling Dimensional Collapse toward Comprehensive Universal Domain Adaptation},
+  author={Hung-Chieh Fang and Po-Yi Lu and Hsuan-Tien Lin},
+  booktitle={Proceedings of the International Conference on Machine Learning (ICML)},
+  year={2025},
+}
+    </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
